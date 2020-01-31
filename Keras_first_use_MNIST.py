@@ -21,8 +21,11 @@ neuralnet.add(layers.Dense(512,activation='relu',input_shape=(28*28,)))
 
 #creating the output layer: here, we must only define the output shape,
 #namely the number of categories into which we want to classify the data
+#the activation function, softmax, returns an array of 10 probability
+#scores for each category (all probabilities summing to 1)
+
 neuralnet.add(layers.Dense(10,activation='softmax'))
 
-#let's see the first image of the dataset we're given
+#let's see the first image in the dataset we're given
 plt.imshow(train_data[0], cmap='gray')
 plt.show()
